@@ -101,7 +101,7 @@ Block_::Block_(MPM *mpm, vector<string> args) : Region(mpm, args)
   }
 
   if (domain->dimension == 3) {
-    if (args[6].compare("+INF") == 0 || args[6].compare("INF") == 0 || args[6].compare("EDGE") == 0) {
+    if (args[6].compare("-INF") == 0 || args[6].compare("INF") == 0 || args[6].compare("EDGE") == 0) {
       if (domain->regions.size() == 0) {
 	error->all(FLERR, "Cannot use region INF or EDGE when box does not exist.\n");
       }
